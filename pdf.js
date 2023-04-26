@@ -2,32 +2,20 @@ import fs from "fs";
 import PDFDocument from "pdfkit";
 
 function createInvoice(invoice, path) {
-    // let doc = new PDFDocument({ size: "A4", margin: 50 });
+    let doc = new PDFDocument({ size: "A4", margin: 50 });
 
-    // generateHeader(doc);
-    // generateCustomerInformation(doc, invoice);
-    // generateInvoiceTable(doc, invoice);
-    // generateFooter(doc);
+    generateHeader(doc);
+    generateCustomerInformation(doc, invoice);
+    generateInvoiceTable(doc, invoice);
+    generateFooter(doc);
 
-    // doc.end();
-    // doc.pipe(fs.createWriteStream(path));
-    // Create a document
-    const doc = new PDFDocument();
-
-    // Pipe the document to a file stream
-    const stream = fs.createWriteStream('output.pdf');
-    doc.pipe(stream);
-
-    // Add some text to the document
-    doc.text('Hello, world!');
-
-    // Finalize the PDF and end the stream
     doc.end();
+    doc.pipe(fs.createWriteStream(path));
 }
 
 function generateHeader(doc) {
     doc
-
+        .image("logo.png", 50, 45, { width: 50 })
         .fillColor("#444444")
         .fontSize(20)
         .text("ACME Inc.", 110, 57)

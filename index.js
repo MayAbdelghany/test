@@ -37,7 +37,7 @@ const invoice = {
     invoice_nr: 1234
 };
 app.get('/', (req, res, next) => {
-    createInvoice(invoice, "invoice.pdf");
+    //createInvoice(invoice, "invoice.pdf");
     res.jos({ message: "hi" })
 })
 
