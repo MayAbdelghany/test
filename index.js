@@ -36,7 +36,10 @@ const invoice = {
     paid: 0,
     invoice_nr: 1234
 };
+app.get('/', (req, res, next) => {
+    createInvoice(invoice, "invoice.pdf");
+    res.jos({ message: "hi" })
+})
 
-//createInvoice(invoice, "invoice.pdf");
 
 app.listen(port, () => console.log(`runing in port 3000`))
