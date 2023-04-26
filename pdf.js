@@ -11,8 +11,6 @@ function createInvoice(invoice, path) {
 
     // doc.end();
     // doc.pipe(fs.createWriteStream(path));
-    const fs = require('fs');
-
     // Create a document
     const doc = new PDFDocument();
 
