@@ -38,7 +38,7 @@ const invoice = {
 };
 app.get('/', (req, res, next) => {
     //createInvoice(invoice, "invoice.pdf");
-    res.josn({ message: "hi" })
+    res.josn({ "message": "hi" })
 })
 
 
