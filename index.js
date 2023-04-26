@@ -39,7 +39,7 @@ const invoice = {
 app.get('/', (req, res, next) => {
     console.log(port);
     //createInvoice(invoice, "invoice.pdf");
-    // res.josn({ "message": "hi" })
+    res.json({ message: "hi" })
 })
 
 
