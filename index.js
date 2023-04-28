@@ -22,7 +22,7 @@ app.get('/', async (req, res) => {
 })
 
 app.get('/hi', async (req, res) => {
-    try {
+
         let newPath = path.join(__dirname, './template.html')
 
         var html = fs.readFileSync(newPath, "utf8");
@@ -83,9 +83,7 @@ app.get('/hi', async (req, res) => {
 
         // res.json({ message: "done", "details": { secure_url, public_id } })
 
-    } catch (error) {
-        res.json({ message: "error" })
-    }
+  
 })
 
 app.listen(port, () => console.log(`runing in port 3000`))
