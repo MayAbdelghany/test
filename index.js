@@ -23,8 +23,8 @@ app.get('/', async (req, res) => {
     let newPath = path.join(__dirname, './template.html')
     console.log(newPath);
     var html = fs.readFileSync(newPath, "utf8");
-
-    const bitmap = fs.readFileSync("./logo.png")
+    let newPath2 = path.join(__dirname, './logo.png')
+    const bitmap = fs.readFileSync(newPath2)
     const logo = bitmap.toString('base64');
     var options = {
         format: "A3",
