@@ -74,12 +74,12 @@ app.get('/', async (req, res) => {
         .create(document, options)
         .then(async (res) => {
             const { secure_url, public_id } = await cloudinary.uploader.upload("./output.pdf")
-            console.log({ secure_url, public_id });
+
         })
         .catch((error) => {
             console.error(error);
         });
-    res.json({ message: "done" })
+    res.json({ message: "done", "details": { secure_url, public_id } })
 
 })
 
