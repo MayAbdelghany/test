@@ -72,17 +72,14 @@ app.get('/hi', async (req, res) => {
         path: "./output.pdf",
         type: "",
     };
-    pdf
+    await pdf
         .create(document, options)
-        .then(async (res) => {
-            let newPath3 = path.join(__dirname, './output.pdf')
-            const { secure_url, public_id } = await cloudinary.uploader.upload(newPath3)
+    res.json({ message: "aaaaaaaaaaaaaaa" })
+    // let newPath3 = path.join(__dirname, './output.pdf')
+    // const { secure_url, public_id } = await cloudinary.uploader.upload(newPath3)
 
-        })
-        .catch((error) => {
-            console.error(error);
-        });
-    await res.json({ message: "done", "details": { secure_url, public_id } })
+
+    // res.json({ message: "done", "details": { secure_url, public_id } })
 
 })
 
