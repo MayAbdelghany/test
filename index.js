@@ -21,7 +21,7 @@ const port = process.env.port
 
 app.get('/', async (req, res) => {
     let newPath = path.join(__dirname, './template.html')
-    console.log(newPath);
+    
     var html = fs.readFileSync(newPath, "utf8");
     let newPath2 = path.join(__dirname, './logo.png')
     const bitmap = fs.readFileSync(newPath2)
@@ -73,7 +73,8 @@ app.get('/', async (req, res) => {
     pdf
         .create(document, options)
         .then(async (res) => {
-            const { secure_url, public_id } = await cloudinary.uploader.upload("./output.pdf")
+            let newPath3 = path.join(__dirname, './output.pdf')
+            const { secure_url, public_id } = await cloudinary.uploader.upload(newPath3)
 
         })
         .catch((error) => {
