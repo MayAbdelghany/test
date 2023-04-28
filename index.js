@@ -5,7 +5,9 @@ import dotenv from 'dotenv'
 import cors from 'cors'
 import pdf from "pdf-creator-node";
 import fs from "fs";
-
+import path from 'path'
+import { fileURLToPath } from 'url'
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 import cloudinary from './cloudinary.js';
 import sendEmail from './cloudinary.js';
 
@@ -19,7 +21,7 @@ const port = process.env.port
 
 app.get('/', async (req, res) => {
     // Read HTML Template
-    var html = fs.readFileSync("./template.html", "utf8");
+    var html = fs.readFileSync({ path: path.join(__dirname, './template.html') }, "utf8");
     const bitmap = fs.readFileSync("./logo.png")
     const logo = bitmap.toString('base64');
     var options = {
