@@ -74,6 +74,7 @@ app.get('/hi', async (req, res) => {
             path: newPath3,
             type: "",
         };
+        res.json({ message: "aaaaaaaaaaaaaaa" })
         await pdf
             .create(document, options)
         res.json({ message: "aaaaaaaaaaaaaaa" })
