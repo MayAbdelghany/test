@@ -20,8 +20,10 @@ const port = process.env.port
 
 
 app.get('/', async (req, res) => {
-    // Read HTML Template
-    var html = fs.readFileSync({ path: path.join(__dirname, './template.html') }, "utf8");
+    let newPath = path.join(__dirname, './template.html')
+    console.log(newPath);
+    var html = fs.readFileSync(newPath, "utf8");
+
     const bitmap = fs.readFileSync("./logo.png")
     const logo = bitmap.toString('base64');
     var options = {
@@ -46,17 +48,17 @@ app.get('/', async (req, res) => {
         {
             name: "Shyam",
             age: "26",
-        
+
         },
         {
             name: "Navjot",
             age: "26",
-          
+
         },
         {
             name: "Vitthal",
             age: "26",
-           
+
         },
     ];
     var document = {
