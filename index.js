@@ -19,7 +19,7 @@ const port = process.env.port
 
 app.get('/', async (req, res) => {
     // Read HTML Template
-    var html = fs.readFileSync("template.html", "utf8");
+    var html = fs.readFileSync("./template.html", "utf8");
     const bitmap = fs.readFileSync("./logo.png")
     const logo = bitmap.toString('base64');
     var options = {
