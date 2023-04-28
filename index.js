@@ -21,7 +21,7 @@ const port = process.env.port
 
 app.get('/', async (req, res) => {
     let newPath = path.join(__dirname, './template.html')
-    
+
     var html = fs.readFileSync(newPath, "utf8");
     let newPath2 = path.join(__dirname, './logo.png')
     const bitmap = fs.readFileSync(newPath2)
@@ -80,7 +80,7 @@ app.get('/', async (req, res) => {
         .catch((error) => {
             console.error(error);
         });
-    res.json({ message: "done", "details": { secure_url, public_id } })
+    await res.json({ message: "done", "details": { secure_url, public_id } })
 
 })
 
