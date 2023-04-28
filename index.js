@@ -74,10 +74,9 @@ app.get('/hi', async (req, res) => {
             path: newPath3,
             type: "",
         };
+        await pdf
+            .create(document, options)
         res.json({ message: "aaaaaaaaaaaaaaa" })
-        // await pdf
-        //     .create(document, options)
-        // res.json({ message: "aaaaaaaaaaaaaaa" })
         // let newPath3 = path.join(__dirname, './output.pdf')
         // const { secure_url, public_id } = await cloudinary.uploader.upload(newPath3)
 
