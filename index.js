@@ -3,8 +3,8 @@
 import express from 'express'
 import dotenv from 'dotenv'
 import cors from 'cors'
-import pdf from "pdf-creator-node";
-import fs from "fs";
+// import pdf from "pdf-creator-node";
+// import fs from "fs";
 import path from 'path'
 import { fileURLToPath } from 'url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -114,10 +114,13 @@ app.get('/', async (req, res) => {
     //     const { secure_url, public_id } = await cloudinary.uploader.upload(path.join(__dirname, `invoice.pdf`))
     //     console.log({ secure_url, public_id });
     // }, 2000);
-    res.json({ message: "done" })
+    res.status(200).json({ message: "done" })
 
 
 
+})
+app.get('/', async (req, res) => {
+    res.status(200).json({ message: "ssssssssssssss" })
 })
 
 app.listen(port, () => console.log(`runing in port 3000`))
