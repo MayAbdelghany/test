@@ -18,11 +18,8 @@ app.use(cors())
 app.use(express.json())
 const port = process.env.port
 
-app.get('/', async (req, res) => {
-    res.json({ message: "aaaaaaaaaaaaaaa" })
-})
 
-app.get('/hi', async (req, res) => {
+app.get('/', async (req, res) => {
 
         // let newPath = path.join(__dirname, './template.html')
 
