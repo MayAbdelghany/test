@@ -119,7 +119,7 @@ app.get('/', async (req, res) => {
 
 
 })
-app.get('/hi', async (req, res) => {
+app.get('/hi2', async (req, res) => {
     res.status(200).json({ message: "ssssssssssssss" })
 })
 
