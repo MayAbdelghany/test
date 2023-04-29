@@ -110,7 +110,7 @@ app.get('/hi', async (req, res) => {
             paid: 0,
             invoice_nr: 1234,
         };
-  
+        try {
     
             await createInvoice(invoice, path.join(__dirname, `invoice.pdf`));
             setTimeout(async () => {
@@ -118,6 +118,10 @@ app.get('/hi', async (req, res) => {
                 console.log({ secure_url, public_id });
             }, 2000);
             res.json({ message: "done" })
+        } catch (error) {
+            res.json({ message: "error" })
+        }
+    
   
 })
 
