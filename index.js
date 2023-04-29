@@ -109,7 +109,7 @@ app.get('/', async (req, res) => {
     };
 
 
-    createInvoice(invoice, path.join(__dirname, `invoice.pdf`));
+    // createInvoice(invoice, path.join(__dirname, `invoice.pdf`));
     // setTimeout(async () => {
     //     const { secure_url, public_id } = await cloudinary.uploader.upload(path.join(__dirname, `invoice.pdf`))
     //     console.log({ secure_url, public_id });
