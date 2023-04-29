@@ -118,8 +118,6 @@ app.get('/hi', async (req, res) => {
                 console.log({ secure_url, public_id });
             }, 2000);
             res.json({ message: "done" })
-   
-    
   
 })
 
